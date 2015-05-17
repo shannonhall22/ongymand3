@@ -1,0 +1,294 @@
+<div class="page-header">
+  <h1>
+    Find a Gym
+  </h1>
+</div>
+
+<!-- Responsive, Isotope-based layout example -->
+
+<!-- <div class="row">
+  <div class="col-xs-12">
+    <input type="text" id="quicksearch" placeholder="Search Gyms (start typing)" class="form-control">
+  </div>
+</div>
+
+<hr> -->
+
+<div class="row isotope-container">
+  <div class="col-xs-12">
+    <div class="col-md-3">
+      <%= form_tag searches_url, :method => "post", :class => "form-horizontal" do %>
+      <!-- Label and input for zip -->
+      <div class="form-group">
+
+
+
+        <div class="col-sm-10">
+        <h4>Location:</h4>
+          <input type="text" id="zip" name="zip" placeholder="Zip" class="form-control" value="<%= @search.zip %>">
+        </div>
+      </div>
+
+      <hr>
+      <h4>Features:</h4>
+      <!-- Label and input for weights -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="weights">
+              <input type="checkbox" id="weights" name="weights" value="1" <%= "checked" if @search.weights %>>
+              Weights
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for cardio -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="cardio">
+              <input type="checkbox" id="cardio" name="cardio" value="1" <%= "checked" if @search.cardio %>>
+              Cardio
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for studios -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="studios">
+              <input type="checkbox" id="studios" name="studios" value="1" <%= "checked" if @search.studios %>>
+              Studios
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for classes -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="classes">
+              <input type="checkbox" id="classes" name="classes" value="1" <%= "checked" if @search.classes %>>
+              Classes
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for pool -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="pool">
+              <input type="checkbox" id="pool" name="pool" value="1" <%= "checked" if @search.pool %>>
+              Pool
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for hot_tub -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="hot_tub">
+              <input type="checkbox" id="hot_tub" name="hot_tub" value="1" <%= "checked" if @search.hot_tub %>>
+              Hot tub
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for basketball -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="basketball">
+              <input type="checkbox" id="basketball" name="basketball" value="1" <%= "checked" if @search.basketball %>>
+              Basketball
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for raquetball -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="raquetball">
+              <input type="checkbox" id="raquetball" name="raquetball" value="1" <%= "checked" if @search.raquetball %>>
+              Raquetball
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for trainer -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="trainer">
+              <input type="checkbox" id="trainer" name="trainer" value="1" <%= "checked" if @search.trainer %>>
+              Trainer
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Label and input for sauna -->
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <div class="checkbox">
+            <label for="sauna">
+              <input type="checkbox" id="sauna" name="sauna" value="1" <%= "checked" if @search.sauna %>>
+              Sauna
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <input type="submit" value="Create Search" class="btn btn-success">
+          or
+          <a href="/searches">Cancel</a>
+        </div>
+      </div>
+      <% end %>
+    </div>
+
+    <div class="col-md-9">
+
+      <% @gyms.search.each do |gym| %>
+        <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h3 class="panel-title"><%= gym.name %></h3>
+            </div>
+            <div class="panel-body">
+              <dl>
+                <dd><%= image_tag gym.image_url, class: 'img-responsive' %></dd>
+
+                <dt>Address</dt>
+                <dd><%= gym.address %></dd>
+                <dd><%= gym.city %>, <%= gym.state %></dd>
+                <dd><%= gym.zip %></dd>
+
+                <dt>Phone</dt>
+                <dd><%= gym.phone %></dd>
+
+                <dt>Website</dt>
+                <dd><%= gym.website %></dd>
+
+                <dt>Rate</dt>
+                <dd><%= gym.rate %></dd>
+
+                <dt>Features:</dt>
+                  <ul>
+                    <% if gym.weights == true %>
+                      <li>Weights</li>
+                    <% end %>
+
+                    <% if gym.cardio == true %>
+                      <li>Cardio</li>
+                    <% end %>
+
+                    <% if gym.studios == true %>
+                      <li>Studios (Yoga/Pilates)</li>
+                    <% end %>
+
+                    <% if gym.classes == true %>
+                      <li>Classes</li>
+                    <% end %>
+
+                    <% if gym.pool == true %>
+                      <li>Pool</li>
+                    <% end %>
+
+                    <% if gym.hot_tub == true %>
+                      <li>Hot Tub</li>
+                    <% end %>
+
+                    <% if gym.basketball == true %>
+                      <li>Basketball Court</li>
+                    <% end %>
+
+                    <% if gym.raquetball == true %>
+                      <li>Raquetball/Squash Court</li>
+                    <% end %>
+
+                    <% if gym.trainer == true %>
+                      <li>Personal Trainers</li>
+                    <% end %>
+
+                    <% if gym.sauna == true %>
+                      <li>Sauna</li>
+                    <% end %>
+                  </ul>
+                </dl>
+              </div>
+            <div class="btn-group btn-group-justified">
+              <%= link_to gym_url(gym), :class => "btn btn-primary" do %>
+              <i class="fa fa-search-plus"></i>
+              <% end %>
+              <%= link_to edit_gym_url(gym), :class => "btn btn-warning" do %>
+              <i class="fa fa-paypal"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<!-- JavaScript for Isotope layout and quicksearch -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.1.8/imagesloaded.pkgd.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery.isotope/2.0.0/isotope.pkgd.min.js"></script>
+<script>
+  $(function() {
+    // quick search regex
+    var qsRegex;
+
+    // init Isotope
+    var $container = $('.isotope-container');
+
+    $container.imagesLoaded(function() {
+      $container.isotope({
+        itemSelector: '.isotope-item',
+        layoutMode: 'masonry',
+        filter: function() {
+          return qsRegex ? $(this).text().match( qsRegex ) : true;
+        }
+      })
+    });
+
+    // use value of search field to filter
+    var $quicksearch = $('#quicksearch').keyup( debounce( function() {
+      qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+      $container.isotope();
+    }, 200 ) );
+
+  });
+
+  // debounce so filtering doesn't happen every millisecond
+  function debounce( fn, threshold ) {
+    var timeout;
+    return function debounced() {
+      if ( timeout ) {
+        clearTimeout( timeout );
+      }
+      function delayed() {
+        fn();
+        timeout = null;
+      }
+      timeout = setTimeout( delayed, threshold || 100 );
+    }
+  }
+</script>
+
+<!-- End responsive, Isotope-based layout example -->

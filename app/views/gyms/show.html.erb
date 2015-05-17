@@ -1,0 +1,95 @@
+<!-- Responsive panel example-->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Gym #<%= @gym.id %></h3>
+      </div>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-md-12">
+            <dl class="dl-horizontal">
+              <dt>Name</dt>
+              <dd><%= @gym.name %></dd>
+
+              <dt>Address</dt>
+              <dd><%= @gym.address %></dd>
+
+              <dt>City</dt>
+              <dd><%= @gym.city %></dd>
+
+              <dt>State</dt>
+              <dd><%= @gym.state %></dd>
+
+              <dt>Zip</dt>
+              <dd><%= @gym.zip %></dd>
+
+              <dt>Phone</dt>
+              <dd><%= @gym.phone %></dd>
+
+              <dt>Website</dt>
+              <dd><%= @gym.website %></dd>
+
+              <dt>Email</dt>
+              <dd><%= @gym.email %></dd>
+
+              <dt>Rate</dt>
+              <dd><%= @gym.rate %></dd>
+
+              <dt>Image url</dt>
+              <dd><%= @gym.image_url %></dd>
+
+              <dt>Weights</dt>
+              <dd><%= @gym.weights %></dd>
+
+              <dt>Cardio</dt>
+              <dd><%= @gym.cardio %></dd>
+
+              <dt>Studios</dt>
+              <dd><%= @gym.studios %></dd>
+
+              <dt>Classes</dt>
+              <dd><%= @gym.classes %></dd>
+
+              <dt>Pool</dt>
+              <dd><%= @gym.pool %></dd>
+
+              <dt>Hot tub</dt>
+              <dd><%= @gym.hot_tub %></dd>
+
+              <dt>Basketball</dt>
+              <dd><%= @gym.basketball %></dd>
+
+              <dt>Raquetball</dt>
+              <dd><%= @gym.raquetball %></dd>
+
+              <dt>Trainer</dt>
+              <dd><%= @gym.trainer %></dd>
+
+              <dt>Sauna</dt>
+              <dd><%= @gym.sauna %></dd>
+
+              <dt>Search</dt>
+              <dd><%= @gym.search_id %></dd>
+
+            </dl>
+            <div class="btn-group btn-group-justified">
+              <%= link_to gyms_url, :class => "btn btn-primary" do %>
+                <i class="fa fa-chevron-left"></i>
+              <% end %>
+              <%= link_to edit_gym_url(@gym.id), :class => "btn btn-warning" do %>
+                <i class="fa fa-edit"></i>
+              <% end %>
+              <%= link_to gym_url(@gym.id), :method => "delete", :data => { :confirm => "Do you really want to delete this gym?" }, :class => "btn btn-danger" do %>
+                <i class="fa fa-trash-o"></i>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End responsive panel example -->

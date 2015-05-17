@@ -1,4 +1,55 @@
 Rails.application.routes.draw do
+  # Routes for the Search resource:
+  # CREATE
+  get '/searches/new',      :controller => 'searches', :action => 'new',    :as => 'new_search'
+  post '/searches',         :controller => 'searches', :action => 'create', :as => 'searches'
+
+  # READ
+  get '/searches',          :controller => 'searches', :action => 'index'
+  get '/searches/:id',      :controller => 'searches', :action => 'show',   :as => 'search'
+
+  # UPDATE
+  get '/searches/:id/edit', :controller => 'searches', :action => 'edit',   :as => 'edit_search'
+  patch '/searches/:id',    :controller => 'searches', :action => 'update'
+
+  # DELETE
+  delete '/searches/:id',   :controller => 'searches', :action => 'destroy'
+  #------------------------------
+
+  # Routes for the Gym resource:
+  # CREATE
+  get '/gyms/new',      :controller => 'gyms', :action => 'new',    :as => 'new_gym'
+  post '/gyms',         :controller => 'gyms', :action => 'create', :as => 'gyms'
+
+  # READ
+  get '/gyms',          :controller => 'gyms', :action => 'index'
+  get '/gyms/:id',      :controller => 'gyms', :action => 'show',   :as => 'gym'
+
+  # UPDATE
+  get '/gyms/:id/edit', :controller => 'gyms', :action => 'edit',   :as => 'edit_gym'
+  patch '/gyms/:id',    :controller => 'gyms', :action => 'update'
+
+  # DELETE
+  delete '/gyms/:id',   :controller => 'gyms', :action => 'destroy'
+  #------------------------------
+
+  # Routes for the User resource:
+  # CREATE
+  get '/users/new',      :controller => 'users', :action => 'new',    :as => 'new_user'
+  post '/users',         :controller => 'users', :action => 'create', :as => 'users'
+
+  # READ
+  get '/users',          :controller => 'users', :action => 'index'
+  get '/users/:id',      :controller => 'users', :action => 'show',   :as => 'user'
+
+  # UPDATE
+  get '/users/:id/edit', :controller => 'users', :action => 'edit',   :as => 'edit_user'
+  patch '/users/:id',    :controller => 'users', :action => 'update'
+
+  # DELETE
+  delete '/users/:id',   :controller => 'users', :action => 'destroy'
+  #------------------------------
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

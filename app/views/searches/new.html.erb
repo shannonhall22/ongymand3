@@ -1,0 +1,165 @@
+<!-- Validation failure messages -->
+
+<% if @search.errors.any? %>
+  <% @search.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<!-- Responsive panel example -->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Add Search</h3>
+      </div>
+      <div class="panel-body">
+        <%= form_tag searches_url, :method => "post", :class => "form-horizontal" do %>
+          <!-- Label and input for zip -->
+          <div class="form-group">
+            <label for="zip" class="col-sm-2 control-label">
+              Zip
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="zip" name="zip" placeholder="Zip" class="form-control" value="<%= @search.zip %>">
+            </div>
+          </div>
+
+          <!-- Label and input for weights -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="weights">
+                  <input type="checkbox" id="weights" name="weights" value="1" <%= "checked" if @search.weights %>>
+                  Weights
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for cardio -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="cardio">
+                  <input type="checkbox" id="cardio" name="cardio" value="1" <%= "checked" if @search.cardio %>>
+                  Cardio
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for studios -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="studios">
+                  <input type="checkbox" id="studios" name="studios" value="1" <%= "checked" if @search.studios %>>
+                  Studios
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for classes -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="classes">
+                  <input type="checkbox" id="classes" name="classes" value="1" <%= "checked" if @search.classes %>>
+                  Classes
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for pool -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="pool">
+                  <input type="checkbox" id="pool" name="pool" value="1" <%= "checked" if @search.pool %>>
+                  Pool
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for hot_tub -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="hot_tub">
+                  <input type="checkbox" id="hot_tub" name="hot_tub" value="1" <%= "checked" if @search.hot_tub %>>
+                  Hot tub
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for basketball -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="basketball">
+                  <input type="checkbox" id="basketball" name="basketball" value="1" <%= "checked" if @search.basketball %>>
+                  Basketball
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for raquetball -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="raquetball">
+                  <input type="checkbox" id="raquetball" name="raquetball" value="1" <%= "checked" if @search.raquetball %>>
+                  Raquetball
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for trainer -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="trainer">
+                  <input type="checkbox" id="trainer" name="trainer" value="1" <%= "checked" if @search.trainer %>>
+                  Trainer
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for sauna -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="sauna">
+                  <input type="checkbox" id="sauna" name="sauna" value="1" <%= "checked" if @search.sauna %>>
+                  Sauna
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <input type="submit" value="Create Search" class="btn btn-success">
+              or
+              <a href="/searches">Cancel</a>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End responsive panel example -->
