@@ -1,5 +1,22 @@
 Rails.application.routes.draw do
 
+  # Routes for the Gym2 resource:
+  # CREATE
+  get '/gym2s/new',      :controller => 'gym2s', :action => 'new',    :as => 'new_gym2'
+  post '/gym2s',         :controller => 'gym2s', :action => 'create', :as => 'gym2s'
+
+  # READ
+  get '/gym2s',          :controller => 'gym2s', :action => 'index'
+  get '/gym2s/:id',      :controller => 'gym2s', :action => 'show',   :as => 'gym2'
+
+  # UPDATE
+  get '/gym2s/:id/edit', :controller => 'gym2s', :action => 'edit',   :as => 'edit_gym2'
+  patch '/gym2s/:id',    :controller => 'gym2s', :action => 'update'
+
+  # DELETE
+  delete '/gym2s/:id',   :controller => 'gym2s', :action => 'destroy'
+  #------------------------------
+
   devise_for :users
   root 'gyms#index'
 

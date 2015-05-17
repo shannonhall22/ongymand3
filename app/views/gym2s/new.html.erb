@@ -1,0 +1,159 @@
+<!-- Validation failure messages -->
+
+<% if @gym2.errors.any? %>
+  <% @gym2.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<!-- Responsive panel example -->
+
+<div class="row">
+  <div class="col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">Add Gym2</h3>
+      </div>
+      <div class="panel-body">
+        <%= form_tag gym2s_url, :method => "post", :class => "form-horizontal" do %>
+          <!-- Label and input for name -->
+          <div class="form-group">
+            <label for="name" class="col-sm-2 control-label">
+              Name
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="name" name="name" placeholder="Name" class="form-control" value="<%= @gym2.name %>">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="image_url" class="col-sm-2 control-label">
+              image_url
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="image_url" name="image_url" placeholder="image_url" class="form-control" value="<%= @gym2.image_url %>">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="rate" class="col-sm-2 control-label">
+              rate
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="rate" name="rate" placeholder="rate" class="form-control" value="<%= @gym2.rate %>">
+            </div>
+          </div>
+
+          <!-- Label and input for address -->
+          <div class="form-group">
+            <label for="address" class="col-sm-2 control-label">
+              Address
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="address" name="address" placeholder="Address" class="form-control" value="<%= @gym2.address %>">
+            </div>
+          </div>
+
+          <!-- Label and input for city -->
+          <div class="form-group">
+            <label for="city" class="col-sm-2 control-label">
+              City
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="city" name="city" placeholder="City" class="form-control" value="<%= @gym2.city %>">
+            </div>
+          </div>
+
+          <!-- Label and input for state -->
+          <div class="form-group">
+            <label for="state" class="col-sm-2 control-label">
+              State
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="state" name="state" placeholder="State" class="form-control" value="<%= @gym2.state %>">
+            </div>
+          </div>
+
+          <!-- Label and input for zip -->
+          <div class="form-group">
+            <label for="zip" class="col-sm-2 control-label">
+              Zip
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="zip" name="zip" placeholder="Zip" class="form-control" value="<%= @gym2.zip %>">
+            </div>
+          </div>
+
+          <!-- Label and input for phone -->
+          <div class="form-group">
+            <label for="phone" class="col-sm-2 control-label">
+              Phone
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="phone" name="phone" placeholder="Phone" class="form-control" value="<%= @gym2.phone %>">
+            </div>
+          </div>
+
+          <!-- Label and input for website -->
+          <div class="form-group">
+            <label for="website" class="col-sm-2 control-label">
+              Website
+            </label>
+            <div class="col-sm-10">
+              <input type="text" id="website" name="website" placeholder="Website" class="form-control" value="<%= @gym2.website %>">
+            </div>
+          </div>
+
+          <!-- Label and input for weights -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="weights">
+                  <input type="checkbox" id="weights" name="weights" value="1" <%= "checked" if @gym2.weights %>>
+                  Weights
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for cardio -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="cardio">
+                  <input type="checkbox" id="cardio" name="cardio" value="1" <%= "checked" if @gym2.cardio %>>
+                  Cardio
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <!-- Label and input for pool -->
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <div class="checkbox">
+                <label for="pool">
+                  <input type="checkbox" id="pool" name="pool" value="1" <%= "checked" if @gym2.pool %>>
+                  Pool
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <input type="submit" value="Create Gym2" class="btn btn-success">
+              or
+              <a href="/gym2s">Cancel</a>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- End responsive panel example -->

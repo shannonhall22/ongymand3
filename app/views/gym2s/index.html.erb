@@ -25,7 +25,7 @@
 
         <div class="col-sm-10">
         <h4>Location:</h4>
-          <input type="text" id="zip" name="zip" placeholder="Zip" class="form-control" value="<%= @search.zip %>">
+          <input type="text" id="zip" name="zip" placeholder="Zip" class="form-control" value="60608">
         </div>
       </div>
 
@@ -36,7 +36,7 @@
         <div class="col-sm-offset-2 col-sm-10">
           <div class="checkbox">
             <label for="weights">
-              <input type="checkbox" id="weights" name="weights" value="1" <%= "checked" if @search.weights %>>
+              <input type="checkbox" id="weights" name="weights" value="1" <%= "checked"%>>
               Weights
             </label>
           </div>
@@ -46,7 +46,7 @@
 
           <div class="checkbox">
             <label for="cardio">
-              <input type="checkbox" id="cardio" name="cardio" value="1" <%= "checked" if @search.cardio %>>
+              <input type="checkbox" id="cardio" name="cardio" value="1" <%= "checked"%>>
               Cardio
             </label>
           </div>
@@ -56,7 +56,7 @@
 
           <div class="checkbox">
             <label for="studios">
-              <input type="checkbox" id="studios" name="studios" value="1" <%= "checked" if @search.studios %>>
+              <input type="checkbox" id="studios" name="studios" value="1">
               Studios
             </label>
           </div>
@@ -66,7 +66,7 @@
 
           <div class="checkbox">
             <label for="classes">
-              <input type="checkbox" id="classes" name="classes" value="1" <%= "checked" if @search.classes %>>
+              <input type="checkbox" id="classes" name="classes" value="1">
               Classes
             </label>
           </div>
@@ -76,7 +76,7 @@
 
           <div class="checkbox">
             <label for="pool">
-              <input type="checkbox" id="pool" name="pool" value="1" <%= "checked" if @search.pool %>>
+              <input type="checkbox" id="pool" name="pool" value="1" <%= "checked" %>>
               Pool
             </label>
           </div>
@@ -86,7 +86,7 @@
 
           <div class="checkbox">
             <label for="hot_tub">
-              <input type="checkbox" id="hot_tub" name="hot_tub" value="1" <%= "checked" if @search.hot_tub %>>
+              <input type="checkbox" id="hot_tub" name="hot_tub" value="1">
               Hot tub
             </label>
           </div>
@@ -96,7 +96,7 @@
 
           <div class="checkbox">
             <label for="basketball">
-              <input type="checkbox" id="basketball" name="basketball" value="1" <%= "checked" if @search.basketball %>>
+              <input type="checkbox" id="basketball" name="basketball" value="1">
               Basketball
             </label>
           </div>
@@ -106,7 +106,7 @@
 
           <div class="checkbox">
             <label for="raquetball">
-              <input type="checkbox" id="raquetball" name="raquetball" value="1" <%= "checked" if @search.raquetball %>>
+              <input type="checkbox" id="raquetball" name="raquetball" value="1">
               Raquetball
             </label>
           </div>
@@ -116,7 +116,7 @@
 
           <div class="checkbox">
             <label for="trainer">
-              <input type="checkbox" id="trainer" name="trainer" value="1" <%= "checked" if @search.trainer %>>
+              <input type="checkbox" id="trainer" name="trainer" value="1" >
               Trainer
             </label>
           </div>
@@ -126,7 +126,7 @@
 
           <div class="checkbox">
             <label for="sauna">
-              <input type="checkbox" id="sauna" name="sauna" value="1" <%= "checked" if @search.sauna %>>
+              <input type="checkbox" id="sauna" name="sauna" value="1">
               Sauna
             </label>
           </div>
@@ -144,7 +144,7 @@
     </div>
 
     <div class="col-md-9">
-      <% @gyms.each do |gym| %>
+      <% @gym2s.each do |gym| %>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -167,45 +167,9 @@
 
                 <dt>Features:</dt>
                   <ul>
-                    <% if gym.weights == true %>
                       <li>Weights</li>
-                    <% end %>
-
-                    <% if gym.cardio == true %>
                       <li>Cardio</li>
-                    <% end %>
-
-                    <% if gym.studios == true %>
-                      <li>Studios (Yoga/Pilates)</li>
-                    <% end %>
-
-                    <% if gym.classes == true %>
-                      <li>Classes</li>
-                    <% end %>
-
-                    <% if gym.pool == true %>
                       <li>Pool</li>
-                    <% end %>
-
-                    <% if gym.hot_tub == true %>
-                      <li>Hot Tub</li>
-                    <% end %>
-
-                    <% if gym.basketball == true %>
-                      <li>Basketball Court</li>
-                    <% end %>
-
-                    <% if gym.raquetball == true %>
-                      <li>Raquetball/Squash Court</li>
-                    <% end %>
-
-                    <% if gym.trainer == true %>
-                      <li>Personal Trainers</li>
-                    <% end %>
-
-                    <% if gym.sauna == true %>
-                      <li>Sauna</li>
-                    <% end %>
                   </ul>
                 </dl>
               </div>

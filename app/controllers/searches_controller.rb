@@ -26,7 +26,7 @@ class SearchesController < ApplicationController
     @search.sauna = params[:sauna]
 
     if @search.save
-      redirect_to gyms_url
+      redirect_to gym2s_url
     else
       render 'new'
     end
