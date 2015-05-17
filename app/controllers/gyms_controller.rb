@@ -2,6 +2,7 @@ class GymsController < ApplicationController
   def index
     @gyms = Gym.all
     @search = Search.new
+    @searches = Search.last
   end
 
   def show
