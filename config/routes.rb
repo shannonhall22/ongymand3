@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  devise_for :users
+  root 'gyms#index'
+
+  get '/home',      :controller => 'home', :action => 'show'
+  get '/about',      :controller => 'about', :action => 'show'
+
   # Routes for the Search resource:
   # CREATE
   get '/searches/new',      :controller => 'searches', :action => 'new',    :as => 'new_search'

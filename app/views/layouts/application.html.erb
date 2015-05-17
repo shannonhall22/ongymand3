@@ -40,13 +40,12 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
-        <li><a href="/searches">Find a Gym</a></li>
         <li><a href="/gyms">Find a Gym</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="/about">About</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <% if 1 > 2 %>
+        <% if user_signed_in? %>
           <li><a href="/users/edit">Manage Profile</a></li>
           <li><a href="/users/sign_out" data-method="delete">Sign out</a></li>
         <% else %>

@@ -163,7 +163,7 @@
 
     <div class="col-md-9">
 
-      <% @gyms.search.each do |gym| %>
+      <% @gyms.each do |gym| %>
         <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3 isotope-item">
           <div class="panel panel-default">
             <div class="panel-heading">
@@ -235,8 +235,11 @@
               <%= link_to gym_url(gym), :class => "btn btn-primary" do %>
               <i class="fa fa-search-plus"></i>
               <% end %>
-              <%= link_to edit_gym_url(gym), :class => "btn btn-warning" do %>
-              <i class="fa fa-paypal"></i>
+
+              <% if user_signed_in? %>
+                <%= link_to edit_gym_url(gym), :class => "btn btn-warning" do %>
+                <i class="fa fa-paypal"></i>
+                <% end %>
               <% end %>
             </div>
           </div>
